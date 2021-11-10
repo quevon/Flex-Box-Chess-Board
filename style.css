@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: linear-gradient( #8b939a, #5b6467);
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease
+}
+
+.newGame {
+    display: flex;
+    justify-content: center;
+}
+.newGame a:link, a:visited{
+    background-color: white;
+    color: black;
+    border: 2px solid crimson;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.newGame a:hover, a:active{
+    background-color: crimson;
+    color: white;
+}
+
+/** ####################################### */
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    
+   
+}
+.chess-table {
+  
+    display: flex;
+    border: 1px solid;
+    height: 500px;
+    width: 500px;
+    justify-content: center;
+    box-shadow:0 8px 8px rgb(0 0 0 / 65%);
+    flex: 0 1 auto;
+}
+.piece-box {
+    display: flex;
+    position: relative;
+    height: 60.5px;
+    width: 60.5px;
+    border: 1px solid;
+    justify-content: center;
+    align-items: center;  
+
+}
+.piece {
+    width: 45px;    
+    height: 45px;
+}
+.piece-box-text {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    font-size: 12px;
+    color: #444;
+    opacity: 0.9;
+}
+img.piece{
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+img.piece:hover{
+    transform: scale(1.2);
+}
+
+/** ####################################### */
+
+.piece-box.white-box {
+    background: white;
+}
+.piece-box.black-box {
+    background: linear-gradient(135deg, #000000, #2d3436);
+}
+.piece-box.piece-selected {
+    background: 	rgb(255,255,0);
+    cursor: pointer;
+}
+.piece-box.piece-ready {
+    background: rgb(0,255,0);
+}
+.piece-box.piece-potential {
+    background: lightskyblue;
+    border: 0.1px solid rgb(24, 155, 236);
+}
+.piece-box.piece-not-allowed {
+    background: rgb(228, 5, 5);
+}
+.piece-box.piece-pointer {
+    cursor: pointer;
+}
+
+/**check mate message win */
+
+.chess-message .check-mate-message {
+    position: absolute;
+    width: 200px;
+    left: calc(-142px + 50vw);
+    top: calc(-10px + 50vh);
+    text-align: center;
+    padding: 10px 50px;
+}
+.chess-message .black-wins {
+    display: none;
+    background: black;
+    color: white;
+    box-shadow: 0 0 150px 75px white;
+    border-radius: 5px;
+}
+.chess-message .black-wins a:link, a:visited{
+    background-color: white;
+    color: black;
+    border: 2px solid crimson;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.chess-message .black-wins a:hover, a:active{
+    background-color: crimson;
+    color: white;
+}
+.chess-message .white-wins {
+    display: none;
+    background: white;
+    color: black;
+    box-shadow: 0 0 150px 75px black;
+    border-radius: 5px;
+}
+.chess-message .white-wins a:link, a:visited{
+    background-color: white;
+    color: black;
+    border: 2px solid crimson;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.chess-message .white-wins a:hover, a:active{
+    background-color: crimson;
+    color: white;
+}
+
+/** media  */
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .chess-table {
+        height: 280px;
+        width: 280px;
+    }
+    .piece-box {
+        width: 33px;
+        height: 33px;
+    }
+    img.piece {
+        width: 15px;    
+        height: 28px;
+    }
+    .chess-message .check-mate-message {
+        width: 150px;
+        top: calc(-15px + 50vh);
+        left: calc(-85px + 50vw);
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 560px) 
+  and (max-device-width: 820px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        padding: 50px 0;
+    }
+    .chess-message .check-mate-message {
+        width: 175px;
+        top: calc(35px + 50vh);
+        left: calc(-127.5px + 50vw);
+        font-size: 14px;
+        padding: 10px 40px;
+    }
+}

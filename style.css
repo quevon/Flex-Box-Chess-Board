@@ -26,7 +26,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 10px;
+    padding-top: 20px;
 }
 .newGame a:link, a:visited{
     background-color: white;
@@ -47,17 +47,16 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 30px;
 
 }
 
 .chess-table {
   
     display: flex;
-    flex-wrap: wrap;
     border: 1px solid;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     justify-content: center;
     box-shadow:0 8px 8px rgb(0 0 0 / 65%);
   
@@ -65,16 +64,16 @@ body{
 .piece-box {
     display: flex;
     position: relative;
-    height: 60.5px;
-    width: 60.5px;
+    height: 48px;
+    width: 48px;
     border: 1px solid;
     justify-content: center;
     align-items: center;  
 
 }
 .piece {
-    width: 45px;    
-    height: 45px;
+    width: 35px;    
+    height: 35px;
 }
 .piece-box-text {
     display: none;
@@ -179,12 +178,12 @@ img.piece:hover{
   and (-webkit-min-device-pixel-ratio: 2) {
     
     .chess-table {
-        height: 450px;
-        width:450px;
+        height: 400px;
+        width:400px;
     }
     .piece-box {
-        height: 54px;
-        width: 54px;
+        height: 48px;
+        width: 48px;
 
     
     }

@@ -9,6 +9,8 @@ body{
     width: 100vw;
     margin: 0;
     padding: 0;
+
+    
 }
 
 @keyframes fadeIn {
@@ -23,6 +25,7 @@ body{
 .newGame {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-bottom: 10px;
 }
 .newGame a:link, a:visited{
@@ -41,24 +44,23 @@ body{
 }
 
 /** ####################################### */
-
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
-   
+
 }
+
 .chess-table {
   
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid;
     height: 500px;
     width: 500px;
     justify-content: center;
     box-shadow:0 8px 8px rgb(0 0 0 / 65%);
-    flex: 0 1 auto;
+  
 }
 .piece-box {
     display: flex;
@@ -168,40 +170,23 @@ img.piece:hover{
     color: white;
 }
 
-/** media  */
-
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-
-    .chess-table {
-        height: 280px;
-        width: 280px;
-    }
-    .piece-box {
-        width: 33px;
-        height: 33px;
-    }
-    img.piece {
-        width: 15px;    
-        height: 28px;
-    }
-    .chess-message .check-mate-message {
-        width: 150px;
-        top: calc(-15px + 50vh);
-        left: calc(-85px + 50vw);
-        font-size: 12px;
-        padding: 10px;
-    }
-}
+/*media  */
+ 
 
 @media only screen 
   and (min-device-width: 560px) 
   and (max-device-width: 820px)
   and (-webkit-min-device-pixel-ratio: 2) {
-    body {
-        padding: 50px 0;
+    
+    .chess-table {
+        height: 450px;
+        width:450px;
+    }
+    .piece-box {
+        height: 54px;
+        width: 54px;
+
+    
     }
     .chess-message .check-mate-message {
         width: 175px;
@@ -210,4 +195,30 @@ img.piece:hover{
         font-size: 14px;
         padding: 10px 40px;
     }
+
+}
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 480px)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+  .chess-table {
+      height: 280px;
+      width: 280px;
+  }
+  .piece-box {
+      width: 33px;
+      height: 33px;
+  }
+  img.piece {
+      width: 15px;    
+      height: 28px;
+  }
+  .chess-message .check-mate-message {
+      width: 150px;
+      top: calc(-15px + 50vh);
+      left: calc(-85px + 50vw);
+      font-size: 12px;
+      padding: 10px;
+  }
 }

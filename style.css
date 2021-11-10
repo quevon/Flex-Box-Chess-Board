@@ -23,6 +23,7 @@ body{
 .newGame {
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
 }
 .newGame a:link, a:visited{
     background-color: white;
@@ -45,7 +46,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     
     
    

@@ -72,8 +72,14 @@ body{
 
 }
 .piece {
-    width: 35px;    
+    width: 30px;    
     height: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+    /* cursor: grab; */
+}
+.piece:hover{
+    transform: scale(1.2);
 }
 .piece-box-text {
     display: none;
@@ -84,13 +90,10 @@ body{
     color: #444;
     opacity: 0.9;
 }
-img.piece{
-    -webkit-filter: drop-shadow(5px 5px 5px #222);
-    filter: drop-shadow(5px 5px 5px #222);
-}
-img.piece:hover{
-    transform: scale(1.2);
-}
+
+    
+
+
 
 /** ####################################### */
 
@@ -101,18 +104,28 @@ img.piece:hover{
     background: linear-gradient(135deg, #000000, #2d3436);
 }
 .piece-box.piece-selected {
-    background: 	rgb(255,255,0);
-    cursor: pointer;
+    background: rgb(255,255,0);
+    cursor: grab;
 }
 .piece-box.piece-ready {
     background: rgb(0,255,0);
+    cursor: url(images/grabbing.cur);
+    cursor: -webkit-grabbing;
+    cursor:    -moz-grabbing;
+    cursor:         grabbing;
+}
+.piece.piece-ready{
+    transform: scale(1.2);
 }
 .piece-box.piece-potential {
-    background: lightskyblue;
-    border: 0.1px solid rgb(24, 155, 236);
+    background: rgb(24, 155, 236);
+    border: 0.1px solid #000;
+    border-radius: 50%;
+    
 }
 .piece-box.piece-not-allowed {
     background: rgb(228, 5, 5);
+    cursor: not-allowed;
 }
 .piece-box.piece-pointer {
     cursor: pointer;
@@ -210,7 +223,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
       height: 33px;
   }
   img.piece {
-      width: 15px;    
+      width: 20px;    
       height: 28px;
   }
   .chess-message .check-mate-message {
